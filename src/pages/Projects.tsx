@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import ProjectCard from '@/components/ProjectCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -7,6 +8,8 @@ import { Button } from '@/components/ui/button';
 import { Plus, Filter, Search } from 'lucide-react';
 
 const Projects = () => {
+  const navigate = useNavigate();
+
   const projects = [
     {
       id: '1',
@@ -54,6 +57,10 @@ const Projects = () => {
     }
   ];
 
+  const handleProjectClick = (projectId: string) => {
+    navigate(`/projects/${projectId}`);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
@@ -94,7 +101,9 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <ProjectCard key={project.id} {...project} />
+            <div key={project.id} onClick={() => handleProjectClick(project.id)}>
+              <ProjectCard {...project} />
+            </div>
           ))}
         </div>
       </div>
