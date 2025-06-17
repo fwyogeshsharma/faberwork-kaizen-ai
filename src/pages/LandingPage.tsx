@@ -127,7 +127,7 @@ const LandingPage = () => {
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8">
               <div className="space-y-6">
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-white">92%</p>
+                  <p className="text-4xl font-bold text-white">94%</p>
                   <p className="text-blue-100">of teams report improved delivery predictability</p>
                 </div>
                 <div className="text-center">
