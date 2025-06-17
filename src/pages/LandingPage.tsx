@@ -1,64 +1,36 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { 
-  TrendingUp, 
-  Brain, 
-  Users, 
-  BarChart3, 
-  Zap, 
-  Target,
-  ArrowRight,
-  CheckCircle
-} from 'lucide-react';
+import { TrendingUp, Brain, Users, BarChart3, Zap, Target, ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const LandingPage = () => {
-  const features = [
-    {
-      icon: <Brain className="w-6 h-6 text-blue-600" />,
-      title: 'AI-Powered Insights',
-      description: 'Get intelligent recommendations for task estimation, deadline optimization, and workflow improvements.'
-    },
-    {
-      icon: <TrendingUp className="w-6 h-6 text-green-600" />,
-      title: 'Kaizen Philosophy',
-      description: 'Embrace continuous improvement with AI-generated suggestions and actionable insights for every sprint.'
-    },
-    {
-      icon: <Users className="w-6 h-6 text-purple-600" />,
-      title: 'Team Collaboration',
-      description: 'Seamless collaboration tools with real-time updates, mentions, and smart notification management.'
-    },
-    {
-      icon: <BarChart3 className="w-6 h-6 text-orange-600" />,
-      title: 'Smart Analytics',
-      description: 'Track team velocity, cycle times, and improvement metrics with beautiful, actionable dashboards.'
-    },
-    {
-      icon: <Zap className="w-6 h-6 text-yellow-600" />,
-      title: 'Automated Workflows',
-      description: 'Reduce manual work with automated stand-up notes, meeting summaries, and progress reporting.'
-    },
-    {
-      icon: <Target className="w-6 h-6 text-red-600" />,
-      title: 'Goal Achievement',
-      description: 'Stay focused on objectives with intelligent goal tracking and milestone management.'
-    }
-  ];
-
-  const benefits = [
-    'Reduce project delays by 30%',
-    'Improve team productivity by 25%',
-    'Get AI-powered risk alerts',
-    'Automated retrospective insights',
-    'Smart task estimation',
-    'Continuous improvement tracking'
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+  const features = [{
+    icon: <Brain className="w-6 h-6 text-blue-600" />,
+    title: 'AI-Powered Insights',
+    description: 'Get intelligent recommendations for task estimation, deadline optimization, and workflow improvements.'
+  }, {
+    icon: <TrendingUp className="w-6 h-6 text-green-600" />,
+    title: 'Kaizen Philosophy',
+    description: 'Embrace continuous improvement with AI-generated suggestions and actionable insights for every sprint.'
+  }, {
+    icon: <Users className="w-6 h-6 text-purple-600" />,
+    title: 'Team Collaboration',
+    description: 'Seamless collaboration tools with real-time updates, mentions, and smart notification management.'
+  }, {
+    icon: <BarChart3 className="w-6 h-6 text-orange-600" />,
+    title: 'Smart Analytics',
+    description: 'Track team velocity, cycle times, and improvement metrics with beautiful, actionable dashboards.'
+  }, {
+    icon: <Zap className="w-6 h-6 text-yellow-600" />,
+    title: 'Automated Workflows',
+    description: 'Reduce manual work with automated stand-up notes, meeting summaries, and progress reporting.'
+  }, {
+    icon: <Target className="w-6 h-6 text-red-600" />,
+    title: 'Goal Achievement',
+    description: 'Stay focused on objectives with intelligent goal tracking and milestone management.'
+  }];
+  const benefits = ['Reduce project delays by 30%', 'Improve team productivity by 25%', 'Get AI-powered risk alerts', 'Automated retrospective insights', 'Smart task estimation', 'Continuous improvement tracking'];
+  return <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Navigation */}
       <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 px-6 py-4 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -98,9 +70,7 @@ const LandingPage = () => {
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="px-8 py-3 text-lg">
-                Watch Demo
-              </Button>
+              <Button size="lg" variant="outline" className="px-8 py-3 text-lg">Watch Our Demo</Button>
             </div>
           </div>
         </div>
@@ -120,8 +90,7 @@ const LandingPage = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            {features.map((feature, index) => <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-3">
                     {feature.icon}
@@ -131,8 +100,7 @@ const LandingPage = () => {
                 <CardContent>
                   <p className="text-gray-600">{feature.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -150,12 +118,10 @@ const LandingPage = () => {
                 project management and continuous improvement.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center space-x-3">
+                {benefits.map((benefit, index) => <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                     <span className="text-white">{benefit}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8">
@@ -244,8 +210,6 @@ const LandingPage = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default LandingPage;
